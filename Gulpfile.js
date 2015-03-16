@@ -14,7 +14,6 @@ gulp.task('parse-react', function () {
   	b.add('./main.js');
   	return b.bundle()
     .pipe(source('main.js'))
-    .pipe(uglify({compress: {} }))
     .pipe(gulp.dest('./dist'))
     .pipe(connect.reload());
 });
@@ -29,9 +28,15 @@ gulp.task('webserver', function() {
   connect.server({
     livereload: true
   })
-
-  gulp.src('/index.html')
-  .pipe(open('http://127.0.0.1:8080'))
 });
 
-gulp.task('default', ['webserver', 'watch'])
+gulp.task('url', function(){
+  var options = {
+    url: 'http://127.0.0.1:8080',
+    app: 'chrome'
+  };
+  gulp.src('./index.html')
+  .pipe(open('', options));
+});
+
+gulp.task('default', ['webserver', 'watch', 'url'])

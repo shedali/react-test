@@ -4,7 +4,7 @@ var MyView = React.createClass({
   render: function(){
     return (
       <div>
-        Amazing React Project
+        A test project
       </div>
     );
   }
