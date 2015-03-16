@@ -9,10 +9,10 @@ var gulp = require('gulp')
 , connect = require('gulp-connect')
 
 gulp.task('parse-react', function () {
-	 var b = browserify();
-  	b.transform(reactify); // use the reactify transform
-  	b.add('./main.js');
-  	return b.bundle()
+    var b = browserify();
+    b.transform(reactify); // use the reactify transform
+    b.add('./main.js');
+    return b.bundle()
     .pipe(source('main.js'))
     .pipe(gulp.dest('./dist'))
     .pipe(connect.reload());
