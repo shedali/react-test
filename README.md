@@ -1,6 +1,6 @@
 # react-test
 
-Gulp React Browserify Example
+Gulp React Browserify Example with livereload
 
 ```npm install```
 
